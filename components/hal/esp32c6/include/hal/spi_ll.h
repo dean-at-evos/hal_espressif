@@ -135,6 +135,8 @@ static inline void spi_ll_master_init(spi_dev_t *hw)
     hw->slave.val = 0;
     hw->user.val = 0;
 
+    // Set up clock and enable clock output
+    hw->clk_gate.clk_en = 1;
     PCR.spi2_clkm_conf.spi2_clkm_en = 1;
     PCR.spi2_clkm_conf.spi2_clkm_sel = 1;
 
